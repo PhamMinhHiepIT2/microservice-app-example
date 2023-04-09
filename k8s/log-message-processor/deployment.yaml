@@ -28,5 +28,5 @@ spec:
               value: http://zipkin:9411/api/v1/spans
           image: phamhiep/log-message-processor
           name: log-message-processor
-          imagePullPolicy: Never
+          imagePullPolicy: Always
       restartPolicy: Always
