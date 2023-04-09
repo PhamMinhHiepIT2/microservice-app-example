@@ -4,8 +4,9 @@ metadata:
   labels:
     app: microservice-app-example
   name: todos-api
+  namespace: app
 spec:
   ports:
-  - port: 8082
+    - port: 8082
   selector:
     service: todos-api

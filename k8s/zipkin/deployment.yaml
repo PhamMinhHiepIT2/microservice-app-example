@@ -4,6 +4,7 @@ metadata:
   labels:
     app: microservice-app-example
   name: zipkin
+  namespace: app
 spec:
   replicas: 1
   template:
@@ -13,10 +14,10 @@ spec:
         service: zipkin
     spec:
       containers:
-      - env:
-        image: openzipkin/zipkin
-        name: zipkin
-        ports:
-        - containerPort: 9411
-        - containerPort: 9410
+        - env: []
+          image: openzipkin/zipkin
+          name: zipkin
+          ports:
+            - containerPort: 9411
+            - containerPort: 9410
       restartPolicy: Always

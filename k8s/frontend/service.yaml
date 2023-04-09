@@ -4,9 +4,9 @@ metadata:
   labels:
     app: microservice-app-example
   name: frontend
+  namespace: app
 spec:
   ports:
-  - port: 8080
+    - port: 8080
   selector:
     service: frontend
-  type: LoadBalancer

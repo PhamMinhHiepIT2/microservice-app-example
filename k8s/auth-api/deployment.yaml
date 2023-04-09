@@ -4,6 +4,7 @@ metadata:
   labels:
     app: microservice-app-example
   name: auth-api
+  namespace: app
 spec:
   replicas: 1
   template:
@@ -13,18 +14,18 @@ spec:
         service: auth-api
     spec:
       containers:
-      - env:
-        - name: AUTH_API_PORT
-          value: "8081"
-        - name: JWT_SECRET
-          value: myfancysecret
-        - name: USERS_API_ADDRESS
-          value: http://users-api:8083
-        - name: ZIPKIN_URL
-          value: http://zipkin:9411/api/v2/spans          
-        image: auth-api
-        name: auth-api
-        ports:
-        - containerPort: 8081
-        imagePullPolicy: Never
+        - env:
+            - name: AUTH_API_PORT
+              value: "8081"
+            - name: JWT_SECRET
+              value: myfancysecret
+            - name: USERS_API_ADDRESS
+              value: http://users-api:8083
+            - name: ZIPKIN_URL
+              value: http://zipkin:9411/api/v2/spans
+          image: auth-api
+          name: auth-api
+          ports:
+            - containerPort: 8081
+          imagePullPolicy: Never
       restartPolicy: Always

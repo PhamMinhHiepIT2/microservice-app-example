@@ -4,8 +4,9 @@ metadata:
   labels:
     app: microservice-app-example
   name: users-api
+  namespace: app
 spec:
   ports:
-  - port: 8083
+    - port: 8083
   selector:
     service: users-api

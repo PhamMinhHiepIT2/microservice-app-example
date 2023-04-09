@@ -4,8 +4,9 @@ metadata:
   labels:
     app: microservice-app-example
   name: redis-queue
+  namespace: app
 spec:
   ports:
-  - port: 6379
+    - port: 6379
   selector:
     service: redis-queue
